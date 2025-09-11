@@ -24,7 +24,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Run Training
+### 2. Run Training (Exp1)
 
 You can use the `run_classifier.py` script to train turn-level classifiers like the ones described in the paper.
 
@@ -58,6 +58,8 @@ python analyze_kfold_best_models.py --kfold_dir outputs/roberta/ --all
 
 ## 🔬 Experimental Results
 
+### Part 1: Classification Model Performance
+
 Performance comparison between original paper and our replication using 5-fold cross-validation:
 
 **diff = our - paper**
@@ -71,12 +73,36 @@ Performance comparison between original paper and our replication using 5-fold c
 | Focusing Question | 0.856 | 0.853 | -0.33% | 0.474 | 0.514 | 4.03% | 0.538 | 0.527 | -1.10% | 0.501 | 0.517 | 1.63% |
 | Student Reasoning | 0.863 | 0.872 | 0.89% | 0.644 | 0.700 | 5.55% | 0.666 | 0.701 | 3.51% | 0.651 | 0.695 | 4.45% |
 
-### Key Findings
+#### Key Findings
 - **Overall Performance**: Our replication achieves comparable or better performance across all tasks
 - **Best Improvements**: Student Reasoning shows the largest improvements (+5.6% precision, +4.4% F1)
 - **Consistent Results**: Most metrics show small positive improvements, indicating successful replication
 
+### Part 2: Regression Analysis Results
+
+Correlation analysis between classroom discourse measures and teaching quality indicators, comparing our replication with the original paper (Table 5).
+
+#### Variables Explanation
+- **Teacher VA**: Teacher Value-Added measures
+- **MQI**: Mathematical Quality of Instruction scores
+- **CLASS Dimensions**: 
+  - CLINSTD (Instructional Dialogue)
+  - CLTS (Teacher Sensitivity) 
+  - CLRSP (Regard for Student Perspectives)
+  - CLPC (Positive Climate)
+
+#### Results Comparison
+
+| Measure | Teacher VA |  | MQI |  | CLINSTD |  | CLTS |  | CLRSP |  | CLPC |  |
+|---------|------------|---|-----|---|---------|---|------|---|-------|---|------|---|
+|         | Paper | Our | Paper | Our | Paper | Our | Paper | Our | Paper | Our | Paper | Our |
+| **Student on Task** | 0.038+ | 0.384 | 0.022* | 0.316 | 0.032** | 0.261 | 0.033** | 0.270 | 0.024** | -0.082 | 0.036** | 0.243 |
+| **Teacher on Task** | 0.038+ | 0.325 | 0.021* | 0.345 | 0.030** | 0.244 | 0.034** | 0.241 | 0.024** | -0.088 | 0.035** | 0.219 |
+| **Focusing Question** | 0.121* | 0.364 | 0.117** | 0.166 | 0.083** | 0.165 | 0.089** | -0.092 | 0.058** | 0.131 | 0.079** | 0.084 |
+| **Teacher Uptake** | 0.234* | -0.111 | 0.233** | 0.235 | 0.198** | 0.119 | 0.132** | 0.123 | 0.164** | -0.010 | 0.115** | 0.112 |
+| **Student Reasoning** | 0.191* | 0.052 | 0.313** | 0.443 | 0.246** | 0.373 | 0.144** | -0.016 | 0.173** | 0.160 | 0.120** | -0.120 |
+
+*Note: Paper results show coefficient significance levels (+p<0.1, *p<0.05, **p<0.01). Our results show raw coefficients.*
 
 ## TODO
-1. add dataset processing results
-2. add correlation results
+ 1. Correct the results of the second experiment...
