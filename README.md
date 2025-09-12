@@ -82,6 +82,8 @@ Performance comparison between original paper and our replication using 5-fold c
 
 Correlation analysis between classroom discourse measures and teaching quality indicators, comparing our replication with the original paper (Table 5).
 
+#### calculation code is [regression.ipynb](regression.ipynb)
+
 #### Variables Explanation
 - **Teacher VA**: Teacher Value-Added measures
 - **MQI**: Mathematical Quality of Instruction scores
@@ -95,19 +97,19 @@ Correlation analysis between classroom discourse measures and teaching quality i
 |             x              |  teacher_va_coef  |   teacher_va_std |  MQI_coef  |   MQI_std |  clinstd_coef  |   clinstd_std |  clts_coef  |   clts_std |  clrsp_coef  |   clrsp_std |  clpc_coef  |   clpc_std |
 |:--------------------------:|:-----------------:|-----------------:|:----------:|----------:|:--------------:|--------------:|:-----------:|-----------:|:------------:|------------:|:-----------:|-----------:|
 | Focusing Question(0_Paper) |      0.121*       |           -0.05  |  0.117**   |    -0.032 |    0.083**     |        -0.026 |   0.089**   |     -0.019 |   0.058**    |      -0.017 |   0.079**   |     -0.017 |
-|  Focusing Question(1_Our)  |       0.23        |            0.123 |   0.166    |     0.126 |     0.165      |         0.121 |   -0.092    |      0.121 |    0.131     |       0.126 |    0.084    |      0.121 |
+|  Focusing Question(1_Our)  |      0.0521       |            0.024 |   0.0926   |     0.105 |     0.1527     |         0.122 |   -0.0749   |      0.111 |    0.1098    |       0.125 |   0.0501    |      0.139 |
 | Student Reasoning(0_Paper) |      0.191*       |           -0.091 |  0.313**   |    -0.066 |    0.246**     |        -0.05  |   0.144**   |     -0.031 |   0.173**    |      -0.035 |   0.120**   |     -0.035 |
-|  Student Reasoning(1_Our)  |       -0.07       |            0.125 |   0.443    |     0.134 |     0.373      |         0.118 |   -0.016    |      0.119 |     0.16     |       0.123 |    -0.12    |      0.117 |
+|  Student Reasoning(1_Our)  |      -0.0133      |            0.025 |   0.3067   |     0.093 |     0.3514     |         0.098 |   -0.0133   |      0.085 |    0.1553    |       0.117 |   -0.1310   |      0.12  |
 |   Student Turn(0_Paper)    |       1.044       |           -1.357 |   -0.047   |    -0.528 |     0.718      |        -0.669 |    0.214    |     -0.574 |    0.125     |      -0.485 |   -0.172    |     -0.56  |
-|    Student Turn(1_Our)     |      -0.003       |            0.327 |   1.004    |     0.329 |     -0.005     |         0.332 |   -0.686    |      0.331 |    -0.016    |       0.332 |   -1.314    |      0.33  |
+|    Student Turn(1_Our)     |      -0.0158      |            0.082 |   0.7198   |     0.257 |    -0.0074     |         0.361 |   -0.5352   |      0.304 |   -0.0049    |       0.342 |   -1.3251   |      0.376 |
 |   Student Word(0_Paper)    |       0.359       |           -0.792 |   0.721+   |    -0.413 |     1.132*     |        -0.541 |    0.001    |     -0.325 |    0.469     |      -0.395 |    0.322    |     -0.387 |
-|    Student Word(1_Our)     |       0.543       |            0.367 |   0.642    |     0.365 |     1.193      |         0.368 |   -0.113    |      0.367 |    0.556     |       0.368 |   -0.021    |      0.367 |
+|    Student Word(1_Our)     |      0.0946       |            0.102 |   0.4924   |     0.315 |     1.0855     |         0.476 |   -0.0609   |      0.273 |    0.4778    |       0.369 |   0.0238    |      0.435 |
 |  Student on Task(0_Paper)  |      0.038+       |           -0.02  |   0.022*   |    -0.01  |    0.032**     |        -0.011 |   0.033**   |     -0.008 |   0.024**    |      -0.007 |   0.036**   |     -0.007 |
-|   Student on Task(1_Our)   |       0.325       |            0.124 |   0.316    |     0.125 |     0.261      |         0.12  |    0.27     |      0.119 |    -0.082    |       0.126 |    0.243    |      0.12  |
+|   Student on Task(1_Our)   |      0.0677       |            0.024 |   0.2333   |     0.089 |     0.2394     |         0.121 |   0.2057    |      0.097 |   -0.1022    |       0.12  |   0.2250    |      0.119 |
 |  Teacher Uptake(0_Paper)   |      0.234*       |           -0.104 |  0.233**   |    -0.086 |    0.198**     |        -0.072 |   0.132**   |     -0.035 |   0.164**    |      -0.044 |   0.115**   |     -0.036 |
-|   Teacher Uptake(1_Our)    |      -0.009       |            0.086 |   0.235    |     0.088 |     0.119      |         0.085 |    0.123    |      0.084 |    -0.01     |       0.088 |    0.112    |      0.085 |
+|   Teacher Uptake(1_Our)    |      0.0040       |            0.017 |   0.1476   |     0.061 |     0.1175     |         0.093 |   0.1062    |      0.075 |   -0.0117    |       0.089 |   0.1051    |      0.093 |
 |  Teacher on Task(0_Paper)  |      0.038+       |           -0.02  |   0.021*   |    -0.01  |    0.030**     |        -0.01  |   0.034**   |     -0.008 |   0.024**    |      -0.007 |   0.035**   |     -0.007 |
-|   Teacher on Task(1_Our)   |       0.312       |            0.133 |   0.345    |     0.133 |     0.244      |         0.128 |    0.241    |      0.127 |    -0.088    |       0.134 |    0.219    |      0.128 |
+|   Teacher on Task(1_Our)   |      0.0646       |            0.027 |   0.2534   |     0.093 |     0.2254     |         0.135 |   0.1817    |      0.097 |   -0.1088    |       0.127 |   0.1975    |      0.133 |
 |  z_Observations(0_Paper)   |        523        |          nan     |    1557    |   nan     |      1554      |       nan     |    1554     |    nan     |     1554     |     nan     |    1554     |    nan     |
 
 *Note: Paper results show coefficient significance levels (+p<0.1, *p<0.05, **p<0.01). Our results show raw coefficients.*
