@@ -9,11 +9,12 @@ Replication of: [The NCTE transcripts: A dataset of elementary math classroom tr
 
 | File | Description |
 |------|-------------|
-| `ncte_single_utterances.csv` | All utterance data with OBSID (transcript ID), NCTETID (teacher ID), comb_idx (utterance ID) |
-| `student_reasoning.csv` | Student reasoning annotations (binary) |
-| `paired_annotations.csv` | Turn-level annotations: student_on_task, teacher_on_task, high_uptake, focusing_question |
+| `ncte_single_utterances.csv` | A csv file containing all utterances from the transcript dataset. The `OBSID` column represents the unique ID for the transcript, and the `NCTETID` represents the teacher ID, which are mappable to metadata. `comb_idx` represents a unique ID for each utterance (concatenation of and `turn_idx`), which is mappable to turn-level annotations. |
+| `student_reasoning.csv` | Turn-level annotations for `student_reasoning`. The annotations are binary.|
+| `paired_annotations.csv` | Turn-level annotations for `student_on_task`, `teacher_on_task`, `high_uptake`, focu`sing_question, using majority rater labels. The annotation protocol is included under the coding schemes folder. |
 
-**Metadata**: Available through [ICPSR](https://www.icpsr.umich.edu/web/ICPSR/studies/36095) for observation scores, value-added measures, etc.
+**Metadata**:  The transcripts are associated with metadata, including observation scores, value added measures and student questionnaire responses. The metadata and additional documentation are available on [ICPSR](https://www.icpsr.umich.edu/web/ICPSR/studies/36095). You can use the `OBSID` variable and the `NCTETID` variables to map transcript data to the metadata.
+
 
 ## 🚀 Quick Start
 
@@ -97,22 +98,24 @@ Correlation analysis between classroom discourse measures and teaching quality i
 |             x              |  teacher_va_coef  |   teacher_va_std |  MQI_coef  |   MQI_std |  clinstd_coef  |   clinstd_std |  clts_coef  |   clts_std |  clrsp_coef  |   clrsp_std |  clpc_coef  |   clpc_std |
 |:--------------------------:|:-----------------:|-----------------:|:----------:|----------:|:--------------:|--------------:|:-----------:|-----------:|:------------:|------------:|:-----------:|-----------:|
 | Focusing Question(0_Paper) |      0.121*       |           -0.05  |  0.117**   |    -0.032 |    0.083**     |        -0.026 |   0.089**   |     -0.019 |   0.058**    |      -0.017 |   0.079**   |     -0.017 |
-|  Focusing Question(1_Our)  |      0.0521       |            0.024 |   0.0926   |     0.105 |     0.1527     |         0.122 |   -0.0749   |      0.111 |    0.1098    |       0.125 |   0.0501    |      0.139 |
+|  Focusing Question(1_Our)  |      0.2633       |            0.121 |   0.1316   |     0.15  |     0.1632     |         0.13  |   -0.0926   |      0.138 |    0.1151    |       0.132 |   0.0484    |      0.134 |
 | Student Reasoning(0_Paper) |      0.191*       |           -0.091 |  0.313**   |    -0.066 |    0.246**     |        -0.05  |   0.144**   |     -0.031 |   0.173**    |      -0.035 |   0.120**   |     -0.035 |
-|  Student Reasoning(1_Our)  |      -0.0133      |            0.025 |   0.3067   |     0.093 |     0.3514     |         0.098 |   -0.0133   |      0.085 |    0.1553    |       0.117 |   -0.1310   |      0.12  |
+|  Student Reasoning(1_Our)  |      -0.0671      |            0.127 |   0.4362   |     0.133 |     0.3757     |         0.105 |   -0.0165   |      0.105 |    0.1629    |       0.123 |   -0.1266   |      0.116 |
 |   Student Turn(0_Paper)    |       1.044       |           -1.357 |   -0.047   |    -0.528 |     0.718      |        -0.669 |    0.214    |     -0.574 |    0.125     |      -0.485 |   -0.172    |     -0.56  |
-|    Student Turn(1_Our)     |      -0.0158      |            0.082 |   0.7198   |     0.257 |    -0.0074     |         0.361 |   -0.5352   |      0.304 |   -0.0049    |       0.342 |   -1.3251   |      0.376 |
+|    Student Turn(1_Our)     |      -0.0798      |            0.416 |   1.0238   |     0.365 |    -0.0079     |         0.386 |   -0.6615   |      0.376 |   -0.0051    |       0.359 |   -1.2814   |      0.364 |
 |   Student Word(0_Paper)    |       0.359       |           -0.792 |   0.721+   |    -0.413 |     1.132*     |        -0.541 |    0.001    |     -0.325 |    0.469     |      -0.395 |    0.322    |     -0.387 |
-|    Student Word(1_Our)     |      0.0946       |            0.102 |   0.4924   |     0.315 |     1.0855     |         0.476 |   -0.0609   |      0.273 |    0.4778    |       0.369 |   0.0238    |      0.435 |
+|    Student Word(1_Our)     |      0.4780       |            0.516 |   0.7003   |     0.449 |     1.1606     |         0.509 |   -0.0752   |      0.337 |    0.5011    |       0.387 |   0.0230    |      0.42  |
 |  Student on Task(0_Paper)  |      0.038+       |           -0.02  |   0.022*   |    -0.01  |    0.032**     |        -0.011 |   0.033**   |     -0.008 |   0.024**    |      -0.007 |   0.036**   |     -0.007 |
-|   Student on Task(1_Our)   |      0.0677       |            0.024 |   0.2333   |     0.089 |     0.2394     |         0.121 |   0.2057    |      0.097 |   -0.1022    |       0.12  |   0.2250    |      0.119 |
+|   Student on Task(1_Our)   |      0.3425       |            0.12  |   0.3318   |     0.126 |     0.2560     |         0.129 |   0.2543    |      0.12  |   -0.1072    |       0.126 |   0.2176    |      0.115 |
 |  Teacher Uptake(0_Paper)   |      0.234*       |           -0.104 |  0.233**   |    -0.086 |    0.198**     |        -0.072 |   0.132**   |     -0.035 |   0.164**    |      -0.044 |   0.115**   |     -0.036 |
-|   Teacher Uptake(1_Our)    |      0.0040       |            0.017 |   0.1476   |     0.061 |     0.1175     |         0.093 |   0.1062    |      0.075 |   -0.0117    |       0.089 |   0.1051    |      0.093 |
+|   Teacher Uptake(1_Our)    |      0.0200       |            0.087 |   0.2100   |     0.087 |     0.1257     |         0.1   |   0.1312    |      0.093 |   -0.0122    |       0.093 |   0.1017    |      0.09  |
 |  Teacher on Task(0_Paper)  |      0.038+       |           -0.02  |   0.021*   |    -0.01  |    0.030**     |        -0.01  |   0.034**   |     -0.008 |   0.024**    |      -0.007 |   0.035**   |     -0.007 |
-|   Teacher on Task(1_Our)   |      0.0646       |            0.027 |   0.2534   |     0.093 |     0.2254     |         0.135 |   0.1817    |      0.097 |   -0.1088    |       0.127 |   0.1975    |      0.133 |
+|   Teacher on Task(1_Our)   |      0.3264       |            0.136 |   0.3604   |     0.132 |     0.2410     |         0.144 |   0.2245    |      0.119 |   -0.1141    |       0.133 |   0.1910    |      0.128 |
 |  z_Observations(0_Paper)   |        523        |          nan     |    1557    |   nan     |      1554      |       nan     |    1554     |    nan     |     1554     |     nan     |    1554     |    nan     |
-
 *Note: Paper results show coefficient significance levels (+p<0.1, *p<0.05, **p<0.01). Our results show raw coefficients.*
 
 ## TODO
  1. Correct the results of the second experiment...
+
+## Reference
+https://github.com/ddemszky/classroom-transcript-analysis
