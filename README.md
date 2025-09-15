@@ -112,6 +112,7 @@ Correlation analysis between classroom discourse measures and teaching quality i
 |  Teacher on Task(0_Paper)  |      0.038+       |           -0.02  |   0.021*   |    -0.01  |    0.030**     |        -0.01  |   0.034**   |     -0.008 |   0.024**    |      -0.007 |   0.035**   |     -0.007 |
 |   Teacher on Task(1_Our)   |      0.3264       |            0.136 |   0.3604   |     0.132 |     0.2410     |         0.144 |   0.2245    |      0.119 |   -0.1141    |       0.133 |   0.1910    |      0.128 |
 |  z_Observations(0_Paper)   |        523        |          nan     |    1557    |   nan     |      1554      |       nan     |    1554     |    nan     |     1554     |     nan     |    1554     |    nan     |
+
 *Note: Paper results show coefficient significance levels (+p<0.1, *p<0.05, **p<0.01). Our results show raw coefficients.*
 
 ## TODO
